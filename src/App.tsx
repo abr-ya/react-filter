@@ -1,16 +1,14 @@
 import { useState, useEffect } from "react";
-import { Users } from "./data/users";
-import { IUser } from "./interfaces";
+import { Songs, Bands } from "./data/songs";
+import { ISong, IBand } from "./interfaces";
 import "./app.css";
 
 function App(): JSX.Element {
   const [query, setQuery] = useState("");
-  const [users, setUsers] = useState<IUser[]>([]);
+  const [songs, setSongs] = useState<ISong[]>([]);
 
   useEffect(() => {
-    setUsers(
-      Users.filter((item) => item.first_name.toLowerCase().includes(query)),
-    );
+    setSongs(Songs.filter((item) => item.title.toLowerCase().includes(query)));
   }, [query]);
 
   return (
@@ -21,9 +19,9 @@ function App(): JSX.Element {
         onChange={(e) => setQuery(e.target.value.toLowerCase())}
       />
       <ul className="list">
-        {users.map((user: IUser) => (
-          <li className="listItem" key={user.id}>
-            {user.first_name}
+        {songs.map((song: ISong) => (
+          <li className="listItem" key={song.id}>
+            {`${song.title} (${Bands[song.band].title})`}
           </li>
         ))}
       </ul>

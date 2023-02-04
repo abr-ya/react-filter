@@ -5,3 +5,14 @@ export interface IUser {
   email: string;
   gender: string;
 }
+
+export interface ISong {
+  id: number;
+  title: string;
+  band: number;
+}
+
+export interface IBand {
+  id: number;
+  title: string;
+}
