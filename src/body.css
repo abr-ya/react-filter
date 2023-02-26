@@ -33,3 +33,7 @@ body {
   font-weight: var(--fw-light);
   background-color: var(--colors-bg);
 }
+
+h1 {
+  margin: 20px 0;
+}

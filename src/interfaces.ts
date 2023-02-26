@@ -16,3 +16,8 @@ export interface IBand {
   id: number;
   title: string;
 }
+
+export interface ISelectValue {
+  value: number;
+  label: string;
+}
