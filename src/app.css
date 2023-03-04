@@ -3,18 +3,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 900px;
+}
+
+@media (min-width: 1280px) {
+  .app {
+    min-width: 900px;
+  }
 }
 
 .filters {
   display: flex;
+  flex-direction: initial;
   align-items: center;
   justify-content: space-between;
   width: 600px;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+  }
 }
 
 .filter-band, .right {
   width: 290px;
+  margin-bottom: 10px;
 }
 
 .search {
